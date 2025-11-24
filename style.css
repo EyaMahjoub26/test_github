@@ -159,3 +159,84 @@ body > *:not(.header) {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 
 }
+
+
+#formContainer {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: centre;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index:200;
+  opacity:0;
+}
+
+
+#formContainer.show {
+  opacity:1;
+  pointer-events: all;
+}
+
+.sectionContainer {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius:12px;
+  padding:2rem;
+  width:90%;
+  max-width: 400px;
+  box-shadow: 0 8px 25px rgba(0,0, 0, 0.4);
+  text-align: center;
+}
+
+.sectionContainer h2 {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.sectionContainer form input {
+  width:100%;
+  padding:0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius:10px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color:var(--text-color);
+  backdrop-filter: blur(8px);
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.sectionContainer form input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.formbtn {
+  display: flex;
+  justify-content: space-between;
+  gap:1rem;
+}
+
+.formbtn .btn {
+    flex: 1;
+    padding: 0.6rem 0;
+    font-weight: bold;
+    border-radius: 8px;
+    border:none;
+    cursor:pointer ;
+    color: white;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.formbtn .btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
