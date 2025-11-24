@@ -171,8 +171,8 @@ body > *:not(.header) {
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
-  align-items: centre;
   pointer-events: none;
+  align-items: center;
   transition: opacity 0.3s ease;
   z-index:200;
   opacity:0;
@@ -240,3 +240,4 @@ body > *:not(.header) {
   transform: scale(1.05);
   opacity: 0.9;
 }
+
