@@ -9,9 +9,12 @@
 
    <body>
     <header class="header">
-       <h1>Student Manager</h1>
-       <button id="addStudentBtn" class="btn"> Add Student</button>
+        <h1>Student Manager</h1>
+        <button id="themeToggle" class="btn">Dark/Light</button>
+        <button id="addStudentBtn" class="btn"> Add Student</button>
+        
     </header>
+
 
     <div class="search-section">
     <select id="searchType" class="search-select">
@@ -39,9 +42,9 @@
            <h2>Add a Student</h2>
            <form id="formulaire">
                <input type="text" id="name" placeholder="Name" required>
-               <input type="number" id="age" placeholder="Age" required>
+               <input type="number" id="age" min="1" placeholder="Age" required>
                <input type="email" id="email" placeholder="Email" required>
-               <input type="number" id="telephone" placeholder="Phone Number" required>
+               <input type="number" id="telephone"   min="10000000" max="99999999" required placeholder="Phone Number" required>
                <input type="text" id="course" placeholder="Course" required>
                <input type="file" id="photo" name="photo" accept="image/*" placeholder="Photo">
                <div class="formbtn">

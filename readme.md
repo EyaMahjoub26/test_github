@@ -1,7 +1,7 @@
 # Gestion des Étudiants (CRUD) - Dark Mode & Glassmorphism
 
 ## Description du projet
-Ce projet est une application web permettant de gérer des étudiants de manière simple et efficace. Elle offre la possibilité d’ajouter, modifier, supprimer, rechercher et trier  des étudiants tout en proposant une interface moderne avec **Glassmorphism**. L’objectif est de créer une expérience utilisateur agréable et intuitive sur tous les types d’écrans.
+Ce projet est une application web permettant de gérer des étudiants de manière simple et efficace. Elle offre la possibilité d’ajouter, modifier, supprimer, rechercher et trier  des étudiants tout en proposant une interface moderne avec **Glassmorphism** . L’objectif est de créer une expérience utilisateur agréable et intuitive sur tous les types d’écrans.
 
 ## Technologies utilisées
 - **HTML5** : structure de la page et des formulaires  
@@ -15,7 +15,8 @@ Ce projet est une application web permettant de gérer des étudiants de manièr
 - Supprimer un étudiant  
 - Rechercher des étudiants en temps réel  
 - Trier les étudiants par ordre alphabetique, par age ou par filiere 
-- Affichage des données sous forme de grille responsive  
+- Affichage des données sous forme de grille responsive 
+- Basculer entre mode sombre et claire  
 
 ## Lien vers le rendu final
 [Voir le projet sur GitHub Pages](https://eyamahjoub26.github.io/test_github/)

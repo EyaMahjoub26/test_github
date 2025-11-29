@@ -232,3 +232,12 @@ function sortStudents() {
 }
 // evenement quand on change le critere de tri
 sortType.addEventListener("change", sortStudents);
+
+
+
+
+//mode claire
+const toggleBtn = document.getElementById('themeToggle');
+toggleBtn.addEventListener('click', () => {
+  document.documentElement.classList.toggle('light');
+});

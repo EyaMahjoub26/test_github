@@ -7,6 +7,16 @@
   --glass-border : rgba(255, 255, 255, 0.15); 
 }
 
+:root.light {
+  --bg-color: #f0f2f5;                
+  --text-color: #5a5555;              
+  --text-secondaire: #4a4a4a;         
+  --accent-color: #69648a;           
+  --glass-bg: rgba(199, 188, 188, 0.4); 
+  --glass-border: rgba(222, 217, 217, 0.6);   
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +39,7 @@ body {
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   padding: 1rem 2rem;
   backdrop-filter: blur(30px);
@@ -44,8 +54,8 @@ body {
 }
 
 .btn {
-  background: linear-gradient(90deg, #6a5acd, #738bd8);
-  border: none;
+  background: var(--accent-color);
+  border : none;
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -185,7 +195,7 @@ body > *:not(.header) {
 }
 
 .sectionContainer {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass-border);
   backdrop-filter: blur(10px);
   border-radius:12px;
   padding:2rem;
@@ -267,5 +277,6 @@ body > *:not(.header) {
 .search-select option {
   background: var(--bg-color);
   color: white; 
-  padding-left: 1rem;
-}
+  padding-left: 1rem;}
+
+ 
