@@ -78,7 +78,7 @@ const age = document.getElementById("age").value ;
 
 //photo
 const photoInput = document.getElementById("photo");
-let photoURL = "https://i.pravatar.cc/150"; //image par defaut
+let photoURL = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"; //image par defaut
 if (photoInput.files && photoInput.files[0]) {
     photoURL = URL.createObjectURL(photoInput.files[0]);
 }
