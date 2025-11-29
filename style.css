@@ -283,49 +283,55 @@ body > *:not(.header) {
   
   @media (max-width: 600px) {
 
+  /* Header */
   .header {
     flex-direction: column;
-    text-align: center;
-    gap: 1.2rem;
-    padding: 1rem 1.5rem;
-  }
-
-  .header h1 {
-    font-size: 28px;
-  }
-
-  /* Correction principale — barre de recherche */
-  .search-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding: 0 1rem;
-  }
-
-  .search-section input {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .search-section select {
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .students-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .student-card {
+    gap: 0.8rem;
     padding: 1rem;
   }
 
-  .sectionContainer {
-    width: 95%;
-    padding: 1.5rem;
+  .header h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  /* Conteneur des boutons */
+  .header-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .header-buttons .btn {
+    width: 90%;
+  }
+
+  /* Search section */
+  .search-section {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .search-section input,
+  .search-section select {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Grid */
+  .students-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .student-card {
+    width: 100%;
+    padding: 1.2rem;
   }
 }
