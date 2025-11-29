@@ -63,8 +63,8 @@ body > *:not(.header) {
 }
 
 .search-section {
-  display: flex;
-  justify-content:center ;
+  display:flex;
+  justify-content:center;
    width: 100%;
   margin: 2rem 1rem ;
 }
@@ -241,3 +241,31 @@ body > *:not(.header) {
   opacity: 0.9;
 }
 
+
+.search-section select {
+  border-radius: 10%;
+  width:auto;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  color:var(--text-color);
+  padding-left: 1rem;
+  border: 1px solid var(--glass-border);
+  color: var(--text-color);
+  outline: none;
+  transition: 0.3s ease;
+
+}
+
+
+
+#searchType option {
+  background: var(--bg-color);
+  color: white; 
+  padding-left: 1rem;
+}
+
+.search-select option {
+  background: var(--bg-color);
+  color: white; 
+  padding-left: 1rem;
+}

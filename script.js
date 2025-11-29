@@ -26,8 +26,7 @@ formContainer.addEventListener("click",(e)=>{
         formContainer.classList.remove("show");
     }
 })
-
-
+//-------------------------------------------------------------------------------------------------------------------
 
 //2* LocalStorage
 
@@ -38,7 +37,7 @@ let students = JSON.parse(localStorage.getItem("students")) || [];
 function saveStudents() {
     localStorage.setItem("students", JSON.stringify(students));
 }
-
+//---------------------------------------------------------------------------------------------------------------------
 
 //3* Affichage des etudiants
 function displayStudents() {
@@ -63,10 +62,9 @@ function displayStudents() {
     attachDeleteButtons();
     attachEditButtons();
 }
-
+//--------------------------------------------------------------------------------------------------------------
 
 //4* ajout etudiant
-
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault(); //empeche la page de se recharger
@@ -117,9 +115,7 @@ displayStudents();
 formContainer.classList.remove("show");
 form.reset();
 });
-
-
-
+//---------------------------------------------------------------------------------------------------------------------------
 
 //5* delete student
 function attachDeleteButtons() {
@@ -134,6 +130,8 @@ function attachDeleteButtons() {
     });
 
 }
+//---------------------------------------------------------------------------------------------------------------------------
+
 
 //6* edit studnent
 let editIndex = null; //sauvegarde lindex de letudiant a modifier
@@ -157,4 +155,80 @@ function attachEditButtons () {
     });
 
 }
+//---------------------------------------------------------------------------------------------------------------------
 
+
+// 6* Recherche 
+// Récupérer les éléments
+const searchInput = document.getElementById("search");
+const searchType = document.getElementById("searchType");
+
+//Fonction pour filtrer et afficher les etudiants
+function filterStudents() {
+    const query = searchInput.value.toLowerCase(); // texte saisi en minuscules
+    const criterion = searchType.value; // nom du champ choisi pour la recherche
+
+    // on filtre les etudiants selon le critere choisi
+    const filtered = students.filter(student => {
+        // conversion en string pour eviter les erreurs sur age ou phone
+        return String(student[criterion]).toLowerCase().includes(query);
+    });
+
+//fonction affichage filtre
+studentsGrid.innerHTML = ""; // vider la grille avant d'afficher
+filtered.forEach((student, index) => {
+    const card = document.createElement("div");
+    card.classList.add("student-card");
+    card.innerHTML = `
+        <img src="${student.photo}" alt="Photo etudiant">
+        <h3>${student.name}</h3>
+        <p>Age : ${student.age}</p>
+        <p>Email : ${student.email}</p>
+        <p>Phone : ${student.phone}</p>
+        <p>Course : ${student.course}</p>
+        <div class="actions">
+            <button class="delete-btn" data-index="${index}">Delete</button>
+            <button class="edit-btn" data-index="${index}">Edit</button>
+        </div>
+        `;
+    studentsGrid.appendChild(card);
+    });
+    attachDeleteButtons();
+    attachEditButtons();
+}
+
+// Appeler filterStudents quand on tape dans l'input
+searchInput.addEventListener("input", filterStudents);
+
+// Appeler filterStudents quand on change le critere
+searchType.addEventListener("change", filterStudents);
+//-----------------------------------------------------------------------------------------------------------------------------
+
+//7* tri
+const sortType = document.createElement("select"); // creer un select pour le tri
+sortType.innerHTML = `
+    <option value="">Sort By...</option>
+    <option value="name">Name</option>
+    <option value="age">Age</option>
+    <option value="course">Course</option>
+`;
+sortType.classList.add("search-select");
+document.querySelector(".search-section").appendChild(sortType);
+
+// Fonction pour trier les étudiants
+function sortStudents() {
+    const criterion = sortType.value;
+    if (criterion) {
+        students.sort((a, b) => {
+            if (criterion === "age") {
+                return a.age - b.age; // tri num pour age
+            } else {
+                // tri alpha pour name ou course
+                return a[criterion].localeCompare(b[criterion]);
+            }
+        });
+    }
+    filterStudents(); // reaffiche les etudiants apres tri en gardant le filtre si active
+}
+// evenement quand on change le critere de tri
+sortType.addEventListener("change", sortStudents);

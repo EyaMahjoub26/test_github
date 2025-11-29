@@ -13,9 +13,22 @@
        <button id="addStudentBtn" class="btn"> Add Student</button>
     </header>
 
-    <section class="search-section">
-        <input type="text" id="search" placeholder="Search students..."/>
-    </section>
+    <div class="search-section">
+    <select id="searchType" class="search-select">
+        <option value="name">Name</option>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+        <option value="course">Course</option>
+        <option value="age">Age</option>
+    </select>
+    <input type="text" 
+           id="search" 
+           placeholder="Rechercher..."
+           class="search-input">
+
+    </div>
+  
+   
 
     <main class="main">
         <div id="studentsGrid" class="students-grid"></div>
